@@ -1,0 +1,48 @@
+<?php
+
+declare(strict_types=1);
+
+namespace BudgetcontrolLibs\Mailer\Service;
+
+use MLAB\SdkMailer\Service\Mail;
+use Illuminate\Support\Facades\Log;
+use MLAB\SdkMailer\View\Render\View;
+use Budgetcontrol\Connector\Client\BudgetClient;
+use BudgetcontrolLibs\Mailer\Exceptions\ErrorSendingMail;
+
+final class ClientMail
+{
+    private Mail $mail;
+
+    public function __construct(string $host, string $driver, string $password, string $user, string $emailFromAddress)
+    {
+        $this->mail = new Mail();
+        $this->mail->setHost($host);
+        $this->mail->setDriver($driver);
+        $this->mail->setPassword($password);
+        $this->mail->setUser($user);
+        $this->mail->setEmailFromAddress($emailFromAddress);
+    }
+
+    /**
+     * Sends an email to the specified recipient.
+     *
+     * @param string $emailTo The email address of the recipient.
+     * @param string $subject The subject of the email.
+     * @param View $view The view object representing the email content.
+     * @throws ErrorSendingMail Thrown if an error occurs while sending the email.
+     * @return void
+     */
+    public function send(string $emailTo, string $subject, View $view): void
+    {
+        try {
+
+            $this->mail->sendMail($emailTo, $subject, $view);
+
+        } catch (\Throwable $e) {
+
+            throw new ErrorSendingMail($e->getMessage());
+            
+        }
+    }
+}
