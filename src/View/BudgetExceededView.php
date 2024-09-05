@@ -144,31 +144,31 @@ class BudgetExceededView extends Mail implements ViewInterface
      */
     public function validate(): void
     {
-        if (empty($this->message)) {
+        if (!isset($this->message)) {
             throw new \InvalidArgumentException('Message cannot be empty');
         }
 
-        if (empty($this->name)) {
+        if (!isset($this->name)) {
             throw new \InvalidArgumentException('Name cannot be empty');
         }
 
-        if (empty($this->totalSpent)) {
+        if (!isset($this->totalSpent)) {
             throw new \InvalidArgumentException('Total spent cannot be empty');
         }
 
-        if (empty($this->budgetName)) {
+        if (!isset($this->budgetName)) {
             throw new \InvalidArgumentException('Budget name cannot be empty');
         }
 
-        if (empty($this->spentPercentage)) {
+        if (!isset($this->spentPercentage)) {
             throw new \InvalidArgumentException('Spent percentage cannot be empty');
         }
 
-        if (empty($this->percentage)) {
+        if (!isset($this->percentage)) {
             throw new \InvalidArgumentException('Percentage cannot be empty');
         }
 
-        if (empty($this->className)) {
+        if (!isset($this->className)) {
             throw new \InvalidArgumentException('Class name cannot be empty');
         }
     }

@@ -25,13 +25,13 @@ final class ClientMail
     /**
      * Sends an email to the specified recipient.
      *
-     * @param string $emailTo The email address of the recipient.
+     * @param string|array $emailTo The email address of the recipient.
      * @param string $subject The subject of the email.
      * @param ViewInterface $view The view object representing the email content.
      * @throws ErrorSendingMail Thrown if an error occurs while sending the email.
      * @return void
      */
-    public function send(string $emailTo, string $subject, ViewInterface $view): void
+    public function send(string|array $emailTo, string $subject, ViewInterface $view): void
     {
         try {
 
