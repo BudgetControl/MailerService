@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace BudgetcontrolLibs\Mailer\View;
 
@@ -8,7 +9,7 @@ use MLAB\SdkMailer\View\Mail;
  * Class BudgetExceededView
  * Represents a view for a budget exceeded email.
  */
-class BudgetExceededView extends Mail
+class BudgetExceededView extends Mail implements ViewInterface
 {
     private string $message;
     private string $name;
@@ -23,9 +24,17 @@ class BudgetExceededView extends Mail
         parent::__construct(__DIR__.'/../../resources/views/');
     }
 
+    /**
+     * Renders the view for the budget exceeded notification.
+     *
+     * @return string The rendered view as a string.
+     */
     public function view() :string
     {
         $this->setTemplate('budget_exceeded.twig');
+
+        $this->validate();
+
         return $this->render([
             'message' => $this->message,
             'name' => $this->name,
@@ -122,5 +131,45 @@ class BudgetExceededView extends Mail
         $this->className = $className;
 
         return $this;
+    }
+
+    /**
+     * Validates the budget exceeded view.
+     *
+     * This method is responsible for performing any necessary validation
+     * for the budget exceeded view. It ensures that the view is in a valid
+     * state before it is used.
+     *
+     * @return void
+     */
+    public function validate(): void
+    {
+        if (empty($this->message)) {
+            throw new \InvalidArgumentException('Message cannot be empty');
+        }
+
+        if (empty($this->name)) {
+            throw new \InvalidArgumentException('Name cannot be empty');
+        }
+
+        if (empty($this->totalSpent)) {
+            throw new \InvalidArgumentException('Total spent cannot be empty');
+        }
+
+        if (empty($this->budgetName)) {
+            throw new \InvalidArgumentException('Budget name cannot be empty');
+        }
+
+        if (empty($this->spentPercentage)) {
+            throw new \InvalidArgumentException('Spent percentage cannot be empty');
+        }
+
+        if (empty($this->percentage)) {
+            throw new \InvalidArgumentException('Percentage cannot be empty');
+        }
+
+        if (empty($this->className)) {
+            throw new \InvalidArgumentException('Class name cannot be empty');
+        }
     }
 }

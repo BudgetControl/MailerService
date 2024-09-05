@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace BudgetcontrolLibs\Mailer\Service;
 
 use MLAB\SdkMailer\Service\Mail;
-use Illuminate\Support\Facades\Log;
-use MLAB\SdkMailer\View\Render\View;
-use Budgetcontrol\Connector\Client\BudgetClient;
 use BudgetcontrolLibs\Mailer\Exceptions\ErrorSendingMail;
+use BudgetcontrolLibs\Mailer\View\ViewInterface;
 
 final class ClientMail
 {
@@ -29,11 +27,11 @@ final class ClientMail
      *
      * @param string $emailTo The email address of the recipient.
      * @param string $subject The subject of the email.
-     * @param View $view The view object representing the email content.
+     * @param ViewInterface $view The view object representing the email content.
      * @throws ErrorSendingMail Thrown if an error occurs while sending the email.
      * @return void
      */
-    public function send(string $emailTo, string $subject, View $view): void
+    public function send(string $emailTo, string $subject, ViewInterface $view): void
     {
         try {
 
