@@ -11,15 +11,32 @@
             padding: 0;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
+            font-family: sans-serif;
         }
 
-        .container {
+        hr {
+            border-style: dotted;
+            border-width: thin;
+            border-color: #c6c6c6;
+        }
+
+        .container, footer {
             margin: 10px;
             padding: 10px;
             background-color: white;
             border-radius: 20px;
             padding: 20px;
             margin-top: 20px;
+        }
+
+        footer a:link {
+            color: #059669;
+        }
+
+        footer {
+            font-size: smaller;
+            line-height: 0.5em;
+            text-align: justify;
         }
 
         .logo {
@@ -66,34 +83,3 @@
         }
     </style>
 </head>
-<body>
-    <div class="general-container">
-
-    <div class="container">
-    <div class="logo text-center">
-        <img height="30px" src="https://d1lppblt9t2x15.cloudfront.net/logos/bf0d271a7f2045bda323b1d1a2e730e2.png" alt="Budget Control">
-    </div>
-
-        <div class="row">
-            <p>Hi {{name}},</p>
-            <p>Your budget "{{budgetName}}" has exceeded the limit you set.</p>
-        </div>
-        <div class="row mt-5">
-            <div>
-                <div style="align-items: center;">
-                    <span class="budget-label">{{budgetName}}</span><br>
-                    <span class="total-spent">Totale speso: {{totalSpent}}</span><br>
-                    <span class="spent-percentage">Percentuale spesa: {{spentPercentage}}</span><br>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: {{percentage}};">{{spentPercentage}}</div>
-                </div>
-            </div>
-            <br>
-            <p>Thank you for choosing Budget Control!</p>
-            <p>The Budget Control team</p>
-        </div>
-    </div>
-</div>
-</body>
-</html>

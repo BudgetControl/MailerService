@@ -3,13 +3,11 @@ declare(strict_types=1);
 
 namespace BudgetcontrolLibs\Mailer\View;
 
-use MLAB\SdkMailer\View\Mail;
-
 /**
  * Class BudgetExceededView
  * Represents a view for a budget exceeded email.
  */
-class BudgetExceededView extends Mail implements ViewInterface
+class BudgetExceededView extends BaseMail implements ViewInterface
 {
     private string $message;
     private string $name;
@@ -21,7 +19,8 @@ class BudgetExceededView extends Mail implements ViewInterface
 
     public function __construct()
     {
-        parent::__construct(__DIR__.'/../../resources/views/');
+        parent::__construct(__DIR__.'/../../resources/views/command-jobs/');
+        $this->setCopyRightDate((string) date('Y'));
     }
 
     /**
@@ -42,7 +41,10 @@ class BudgetExceededView extends Mail implements ViewInterface
             'budgetName' => $this->budgetName,
             'spentPercentage' => $this->spentPercentage,
             'percentage' => $this->percentage > 100 ? 100 : $this->percentage,
-            'className' => $this->className
+            'className' => $this->className,
+            'user_name' => $this->userName,
+            'user_email' => $this->userEmail,
+            'copyright_date' => $this->copyRightDate
         ]);
     }
 
@@ -170,6 +172,18 @@ class BudgetExceededView extends Mail implements ViewInterface
 
         if (!isset($this->className)) {
             throw new \InvalidArgumentException('Class name cannot be empty');
+        }
+
+        if (!isset($this->userName)) {
+            throw new \InvalidArgumentException('User name cannot be empty');
+        }
+
+        if (!isset($this->userEmail)) {
+            throw new \InvalidArgumentException('User email cannot be empty');
+        }
+
+        if (!isset($this->copyRightDate)) {
+            throw new \InvalidArgumentException('Copy right date cannot be empty');
         }
     }
 }

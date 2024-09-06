@@ -1,0 +1,22 @@
+{% extends "./base.twig" %}
+
+    {% block content %}
+
+        <div class="row">
+            <p>Hi {{user_name}},</p>
+            <p>Your budget "{{budgetName}}" has exceeded the limit you set.</p>
+        </div>
+        <div class="row mt-5">
+            <div>
+                <div style="align-items: center;">
+                    <span class="budget-label">{{budgetName}}</span><br>
+                    <span class="total-spent">Totale speso: {{totalSpent}}</span><br>
+                    <span class="spent-percentage">Percentuale spesa: {{spentPercentage}}</span><br>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: {{percentage}};">{{spentPercentage}}</div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
