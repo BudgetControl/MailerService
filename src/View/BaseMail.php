@@ -13,6 +13,10 @@ class BaseMail extends Mail {
 
     protected function renderData(array $data): array
     {
+        if(empty($this->userName) || empty($this->userEmail) || empty($this->copyRightDate)) {
+            throw new \InvalidArgumentException('The user name, user email and copy right date cannot be empty.');
+        }
+        
         $currentData = [
             'user_name' => $this->userName,
             'user_email' => $this->userEmail,
