@@ -40,7 +40,7 @@ class SignUpView extends BaseMail implements ViewInterface {
      */
     public function validate(): void
     {
-        if (empty($this->link)) {
+        if (empty($this->confirmLink)) {
             throw new \InvalidArgumentException('The link cannot be empty.');
         }
     }
