@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "478801fcfa11df13dde9cf3151639eaf",
+    "content-hash": "27fff6caa530a907dc4f0e77f9180e42",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -214,16 +214,16 @@
         },
         {
             "name": "mlabfactory/libs-mailer",
-            "version": "v1.1.4",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlabfactory/Libs_Mailer.git",
-                "reference": "f335aca321768704062a8fd632e2ad57536d7363"
+                "reference": "c14ebc5dc73fbdaacaeb5f6af53f91ad5fdce30b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/f335aca321768704062a8fd632e2ad57536d7363",
-                "reference": "f335aca321768704062a8fd632e2ad57536d7363",
+                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/c14ebc5dc73fbdaacaeb5f6af53f91ad5fdce30b",
+                "reference": "c14ebc5dc73fbdaacaeb5f6af53f91ad5fdce30b",
                 "shasum": ""
             },
             "require": {
@@ -248,10 +248,10 @@
             ],
             "description": "Budget control SDK package mailer",
             "support": {
-                "source": "https://github.com/mlabfactory/Libs_Mailer/tree/v1.1.4",
+                "source": "https://github.com/mlabfactory/Libs_Mailer/tree/v1.1.5",
                 "issues": "https://github.com/mlabfactory/Libs_Mailer/issues"
             },
-            "time": "2024-05-23T17:02:57+00:00"
+            "time": "2024-09-06T09:06:26+00:00"
         },
         {
             "name": "monolog/monolog",

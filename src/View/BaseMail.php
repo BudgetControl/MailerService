@@ -11,6 +11,16 @@ class BaseMail extends Mail {
     protected string $userName;
     protected string $copyRightDate;
 
+    public function __construct(string $dirPath)
+    {
+        parent::__construct(
+            [
+                $dirPath,
+                __DIR__.'/../../resources/views/'
+            ]
+        );
+    }
+
     protected function renderData(array $data): array
     {
         if(empty($this->userName) || empty($this->userEmail) || empty($this->copyRightDate)) {
