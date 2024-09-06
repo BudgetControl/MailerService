@@ -1,0 +1,35 @@
+{% extends "./base.twig" %}
+
+{% block content %}
+
+        <div class="row">
+
+            <p>Hello {{user_name}},</p>
+            <p>Thank you for registering with BudgetControl, your home budget management solution. We're thrilled to
+                have you on board and help you effectively manage your household finances.</p>
+            <br />
+            <p>To complete your registration and activate your email address, please follow the steps below:</p>
+            <p>Click on the following <a href="{{confirm_link}}">link</a> to activate your email address:</p>
+            <br />
+            <a href="{{confirm_link}}" target="_blank"
+                class="button">
+                Confirm Email
+            </a>
+        </div>
+        <div class="row mt-5">
+            <p>Remember that BudgetControl offers a range of helpful features, including:</p>
+            <ul class="list-disc">
+                <li>Recording your daily expenses and income.</li>
+                <li>Viewing detailed charts and reports to track your finances.</li>
+                <li>Setting personalized savings goals.</li>
+                <li>Receiving reminders for payment deadlines and monthly budgets.</li>
+            </ul>
+            <br />
+            <p>We wish you an exceptional experience with BudgetControl and success in achieving your financial goals.
+            </p>
+        </div>
+        <div class="row">
+            <p class="text-small">This link will work for 10 minuts or until you reset your password.</p>
+
+        </div>
+{% endblock %}

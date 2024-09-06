@@ -12,6 +12,7 @@
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
             font-family: sans-serif;
+            line-height: normal;
         }
 
         hr {
@@ -29,7 +30,20 @@
             margin-top: 20px;
         }
 
-        footer a:link {
+        a:link.button {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .button {
+            border-radius: 5px;
+            background: #059669;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        a:link {
             color: #059669;
         }
 
@@ -56,30 +70,11 @@
             text-align: center;
         }
 
-        .progress-bar {
-            background-color: red;
-            text-align: center;
-            font-weight: bold;
-            color: white;
-            padding: 2px;
-        }
 
-        .budget-label {
-            color: #065F46;
-            display: inline-block;
-            text-transform: uppercase;
-            font-weight: bolder;
-        }
+    {% block styles &}
 
-        .total-spent, .spent-percentage {
-            color: #065F46;
-            font-weight: bold;
-        }
+    {& endblock &}
 
-        .progress-container {
-            margin-top: 10px;
-            background-color: #E5E7EB;
-            overflow: hidden;
-        }
     </style>
+
 </head>

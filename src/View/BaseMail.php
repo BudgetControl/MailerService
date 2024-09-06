@@ -11,6 +11,18 @@ class BaseMail extends Mail {
     protected string $userName;
     protected string $copyRightDate;
 
+    protected function renderData(array $data): array
+    {
+        $currentData = [
+            'user_name' => $this->userName,
+            'user_email' => $this->userEmail,
+            'copy_right_date' => $this->copyRightDate
+        ];
+
+        return array_merge($currentData, $data);
+
+    }
+
     /**
      * Set the value of userName
      *

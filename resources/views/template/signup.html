@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #f2f2f2;
+            line-height: 1.5rem;
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            font-family: sans-serif;
+            line-height: normal;
+        }
+
+        hr {
+            border-style: dotted;
+            border-width: thin;
+            border-color: #c6c6c6;
+        }
+
+        .container, footer {
+            margin: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        a:link.button {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .button {
+            border-radius: 5px;
+            background: #059669;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        a:link {
+            color: #059669;
+        }
+
+        footer {
+            font-size: smaller;
+            line-height: 0.5em;
+            text-align: justify;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        .mt-5 {
+            margin-top: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .progress-bar {
+            background-color: red;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            padding: 2px;
+        }
+
+        .budget-label {
+            color: #065F46;
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+
+        .total-spent, .spent-percentage {
+            color: #065F46;
+            font-weight: bold;
+        }
+
+        .progress-container {
+            margin-top: 10px;
+            background-color: #E5E7EB;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="general-container">
+
+        <div class="container">
+        
+        <div class="logo text-center">
+            <img height="30px" src="https://d1lppblt9t2x15.cloudfront.net/logos/bf0d271a7f2045bda323b1d1a2e730e2.png" alt="Budget Control">
+        </div>
+
+    <div class="row">
+
+        <p>Hello {{user_name}},</p>
+        <p>Thank you for registering with BudgetControl, your home budget management solution. We're thrilled to
+            have you on board and help you effectively manage your household finances.</p>
+        <br />
+        <p>To complete your registration and activate your email address, please follow the steps below:</p>
+        <p>Click on the following <a href="{{confirm_link}}">link</a> to activate your email address:</p>
+        <br />
+        <a href="{{confirm_link}}" target="_blank"
+            class="button">
+            Confirm Email
+        </a>
+    </div>
+    <div class="row mt-5">
+        <p>Remember that BudgetControl offers a range of helpful features, including:</p>
+        <ul class="list-disc">
+            <li>Recording your daily expenses and income.</li>
+            <li>Viewing detailed charts and reports to track your finances.</li>
+            <li>Setting personalized savings goals.</li>
+            <li>Receiving reminders for payment deadlines and monthly budgets.</li>
+        </ul>
+        <br />
+        <p>We wish you an exceptional experience with BudgetControl and success in achieving your financial goals.
+        </p>
+        <br />
+        <p>Thank you again for choosing BudgetControl!</p>
+        <p>The BudgetControl Team</p>
+    </div>
+    <div class="row">
+        <p class="text-small">This link will work for 2 hours or until you reset your password.<br /><br />Lorem
+            Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text.<br /><br /><strong>Best Regards,</strong><br /><strong>Unlayer Team </strong></p>
+
+    </div>
+
+
+<hr/>
+
+    <footer>
+        <div>
+        <p>This email was sent to {{user_email}}. Please don't reply to this email directly.</p>
+    <p>For further assistance, please visit our help desk. You got this message because you signed up to receive BudgetControl emails. If you don't want to receive marketing from BudgetControl in the future, you can unsubscribe.</p>
+    
+    <p class="small-text credits">
+        Copyright {{copyright_date}} BudgetControl | Released under the AGPL License | © <span id="displayYear">{{copyright_date}}</span> Thanks to
+        <a href="https://html.design/">Free Html Templates</a> &amp; <a href="https://www.mlabfactory.it">M-LabFactory</a> | <a href="/terms">Terms &amp; Conditions</a> | <a href="/privacy">Privacy Policy</a>
+    </p>
+    
+    </div>
+    </footer>
+
+</body>
+
+
+</html>

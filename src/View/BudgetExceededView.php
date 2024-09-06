@@ -34,18 +34,17 @@ class BudgetExceededView extends BaseMail implements ViewInterface
 
         $this->validate();
 
-        return $this->render([
-            'message' => $this->message,
-            'name' => $this->name,
-            'totalSpent' => $this->totalSpent,
-            'budgetName' => $this->budgetName,
-            'spentPercentage' => $this->spentPercentage,
-            'percentage' => $this->percentage > 100 ? 100 : $this->percentage,
-            'className' => $this->className,
-            'user_name' => $this->userName,
-            'user_email' => $this->userEmail,
-            'copyright_date' => $this->copyRightDate
-        ]);
+        return $this->render(
+            $this->renderData([
+                'message' => $this->message,
+                'name' => $this->name,
+                'totalSpent' => $this->totalSpent,
+                'budgetName' => $this->budgetName,
+                'spentPercentage' => $this->spentPercentage,
+                'percentage' => $this->percentage > 100 ? 100 : $this->percentage,
+                'className' => $this->className
+            ])
+        );
     }
 
     /**
@@ -154,36 +153,24 @@ class BudgetExceededView extends BaseMail implements ViewInterface
             throw new \InvalidArgumentException('Name cannot be empty');
         }
 
-        if (!isset($this->totalSpent)) {
+        if (empty($this->totalSpent)) {
             throw new \InvalidArgumentException('Total spent cannot be empty');
         }
 
-        if (!isset($this->budgetName)) {
+        if (empty($this->budgetName)) {
             throw new \InvalidArgumentException('Budget name cannot be empty');
         }
 
-        if (!isset($this->spentPercentage)) {
+        if (empty($this->spentPercentage)) {
             throw new \InvalidArgumentException('Spent percentage cannot be empty');
         }
 
-        if (!isset($this->percentage)) {
+        if (empty($this->percentage)) {
             throw new \InvalidArgumentException('Percentage cannot be empty');
         }
 
         if (!isset($this->className)) {
             throw new \InvalidArgumentException('Class name cannot be empty');
-        }
-
-        if (!isset($this->userName)) {
-            throw new \InvalidArgumentException('User name cannot be empty');
-        }
-
-        if (!isset($this->userEmail)) {
-            throw new \InvalidArgumentException('User email cannot be empty');
-        }
-
-        if (!isset($this->copyRightDate)) {
-            throw new \InvalidArgumentException('Copy right date cannot be empty');
         }
     }
 }
