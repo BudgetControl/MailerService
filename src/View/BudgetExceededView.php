@@ -17,12 +17,6 @@ class BudgetExceededView extends BaseMail implements ViewInterface
     private string $percentage;
     private string $className = 'bg-red-200';
 
-    public function __construct()
-    {
-        parent::__construct(__DIR__.'/../../resources/views/command-jobs/');
-        $this->setCopyRightDate((string) date('Y'));
-    }
-
     /**
      * Renders the view for the budget exceeded notification.
      *
@@ -30,8 +24,8 @@ class BudgetExceededView extends BaseMail implements ViewInterface
      */
     public function view() :string
     {
-        $this->setTemplate('budget_exceeded.twig');
-
+        $this->setTemplate('command-jobs/budget_exceeded.twig');
+        $this->setCopyRightDate((string) date('Y'));
         $this->validate();
 
         return $this->render(

@@ -10,12 +10,6 @@ class RecoveryPasswordView extends BaseMail implements ViewInterface {
     
     private string $link;
 
-    public function __construct()
-    {
-        parent::__construct(__DIR__.'/../../resources/views/authentication/');
-        $this->setCopyRightDate((string) date('Y'));
-    }
-
     /**
      * Renders the view for the budget exceeded notification.
      *
@@ -23,8 +17,8 @@ class RecoveryPasswordView extends BaseMail implements ViewInterface {
      */
     public function view() :string
     {
-        $this->setTemplate('recovery_password.twig');
-
+        $this->setTemplate('authentication/recovery_password.twig');
+        $this->setCopyRightDate((string) date('Y'));
         $this->validate();
 
         return $this->render(

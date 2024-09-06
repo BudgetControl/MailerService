@@ -10,12 +10,6 @@ class SignUpView extends BaseMail implements ViewInterface {
     
     private string $confirmLink;
 
-    public function __construct()
-    {
-        parent::__construct(__DIR__.'/../../resources/views/authentication/');
-        $this->setCopyRightDate((string) date('Y'));
-    }
-
     /**
      * Renders the view for the budget exceeded notification.
      *
@@ -23,8 +17,8 @@ class SignUpView extends BaseMail implements ViewInterface {
      */
     public function view() :string
     {
-        $this->setTemplate('signup.twig');
-
+        $this->setTemplate('authentication/signup.twig');
+        $this->setCopyRightDate((string) date('Y'));
         $this->validate();
 
         return $this->render(
