@@ -10,7 +10,6 @@ namespace BudgetcontrolLibs\Mailer\View;
 class BudgetExceededView extends BaseMail implements ViewInterface
 {
     private string $message;
-    private string $name;
     private string $totalSpent;
     private string $budgetName;
     private string $spentPercentage;
@@ -31,7 +30,6 @@ class BudgetExceededView extends BaseMail implements ViewInterface
         return $this->render(
             $this->renderData([
                 'message' => $this->message,
-                'name' => $this->name,
                 'totalSpent' => $this->totalSpent,
                 'budgetName' => $this->budgetName,
                 'spentPercentage' => $this->spentPercentage,
@@ -51,20 +49,6 @@ class BudgetExceededView extends BaseMail implements ViewInterface
     {   
         $this->budgetName = $budgetName;
         $this->message = "Your budget $budgetName, has been exceeded. Please review your expenses and make necessary adjustments.";
-
-        return $this;
-    }
-
-    /**
-     * Set the value of name
-     *
-     * @param string $name
-     *
-     * @return self
-     */
-    public function setName(string $name): self
-    {
-        $this->name = $name;
 
         return $this;
     }
@@ -141,10 +125,6 @@ class BudgetExceededView extends BaseMail implements ViewInterface
     {
         if (!isset($this->message)) {
             throw new \InvalidArgumentException('Message cannot be empty');
-        }
-
-        if (!isset($this->name)) {
-            throw new \InvalidArgumentException('Name cannot be empty');
         }
 
         if (empty($this->totalSpent)) {

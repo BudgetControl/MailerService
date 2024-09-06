@@ -218,12 +218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlabfactory/Libs_Mailer.git",
-                "reference": "f08395a035e1c740071e5df599b433e220780430"
+                "reference": "74dcfd8eecd0d43f294add36f6349f93a876f55a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/f08395a035e1c740071e5df599b433e220780430",
-                "reference": "f08395a035e1c740071e5df599b433e220780430",
+                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/74dcfd8eecd0d43f294add36f6349f93a876f55a",
+                "reference": "74dcfd8eecd0d43f294add36f6349f93a876f55a",
                 "shasum": ""
             },
             "require": {
@@ -251,7 +251,7 @@
                 "source": "https://github.com/mlabfactory/Libs_Mailer/tree/v1.1.5",
                 "issues": "https://github.com/mlabfactory/Libs_Mailer/issues"
             },
-            "time": "2024-09-06T09:37:00+00:00"
+            "time": "2024-09-06T10:10:19+00:00"
         },
         {
             "name": "monolog/monolog",
