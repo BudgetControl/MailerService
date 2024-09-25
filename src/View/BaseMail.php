@@ -24,10 +24,8 @@ class BaseMail extends Mail {
      */
     protected function renderData(array $data): array
     {
-        if(empty($this->userName) || empty($this->userEmail) || empty($this->copyRightDate)) {
-            throw new \InvalidArgumentException('The user name, user email and copy right date cannot be empty.');
-        }
-        
+        $this->validate()
+;        
         $currentData = [
             'user_name' => $this->userName,
             'user_email' => $this->userEmail,
@@ -80,5 +78,25 @@ class BaseMail extends Mail {
         $this->copyRightDate = $copyRightDate;
 
         return $this;
+    }
+
+    /**
+     * Validates the base mail.
+     *
+     * @return void
+     */
+    public function validate(): void
+    {
+        if(empty($this->userName)) {
+            throw new \InvalidArgumentException('User name cannot be empty');
+        }
+
+        if(empty($this->userEmail)) {
+            throw new \InvalidArgumentException('User email cannot be empty');
+        }
+
+        if(empty($this->copyRightDate)) {
+            $this->copyRightDate = (string) date('Y');
+        }
     }
 }
