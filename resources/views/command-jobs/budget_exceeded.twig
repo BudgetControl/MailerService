@@ -4,32 +4,23 @@
 
         <div class="row">
             <p>Hi {{user_name}},</p>
-            <p>Your budget "{{budgetName}}" has exceeded the limit you set.</p>
+            <p>Your budget <b>"{{budgetName}}"</b> has exceeded the limit you set.</p>
         </div>
         <div class="row mt-5">
             <div>
                 <div style="align-items: center;">
-                    <span class="budget-label">{{budgetName}}</span><br>
-                    <span class="total-spent">Totale speso: {{totalSpent}}</span><br>
-                    <span class="spent-percentage">Percentuale spesa: {{spentPercentage}}</span><br>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: {{percentage}};">{{spentPercentage}}</div>
+                    <span><b> Budget configurato:</b> {{budgetAmount}} {{currency}}</span><br>
+                    <span class="total-spent"><b>Totale speso:</b> {{totalSpent}} {{currency}}</span><br>
+                    <span class="total-spent"><b>Totale rimanente:</b> {{totalRemaining}} {{currency}}</span><br>
+                    <span class="spent-percentage"><b>Percentuale spesa:</b> {{spentPercentage}}</span><br>
                 </div>
             </div>
         </div>
 
     {% endblock %}
 
-    {% styles %}
+    {% block styles %}
 
-    .progress-bar {
-            background-color: red;
-            text-align: center;
-            font-weight: bold;
-            color: white;
-            padding: 2px;
-        }
 
         .budget-label {
             color: #065F46;

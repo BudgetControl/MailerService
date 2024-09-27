@@ -10,11 +10,14 @@ namespace BudgetcontrolLibs\Mailer\View;
 class BudgetExceededView extends BaseMail implements ViewInterface
 {
     private string $message;
-    private string $totalSpent;
+    private float $totalSpent;
     private string $budgetName;
     private string $spentPercentage;
     private string $percentage;
     private string $className = 'bg-red-200';
+    private string $currency;
+    private float $totalRemaining;
+    private float $budgetAmount;
 
     /**
      * Renders the view for the budget exceeded notification.
@@ -34,7 +37,10 @@ class BudgetExceededView extends BaseMail implements ViewInterface
                 'budgetName' => $this->budgetName,
                 'spentPercentage' => $this->spentPercentage,
                 'percentage' => $this->percentage > 100 ? 100 : $this->percentage,
-                'className' => $this->className
+                'className' => $this->className,
+                'currency' => $this->currency,
+                'totalRemaining' => $this->totalRemaining,
+                'budgetAmount' => $this->budgetAmount
             ])
         );
     }
@@ -56,11 +62,11 @@ class BudgetExceededView extends BaseMail implements ViewInterface
     /**
      * Set the value of totalSPent
      *
-     * @param string $totalSPent
+     * @param float $totalSPent
      *
      * @return self
      */
-    public function setTotalSpent(string $totalSpent): self
+    public function setTotalSpent(float $totalSpent): self
     {
         $this->totalSpent = $totalSpent;
 
@@ -112,6 +118,36 @@ class BudgetExceededView extends BaseMail implements ViewInterface
         return $this;
     }
 
+
+    /**
+     * Set the value of currency
+     *
+     * @param string $currency
+     *
+     * @return self
+     */
+    public function setCurrency(string $currency): self
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
+
+
+    /**
+     * Set the value of totalRemaining
+     *
+     * @param float $totalRemaining
+     *
+     * @return self
+     */
+    public function setTotalRemaining(float $totalRemaining): self
+    {
+        $this->totalRemaining = $totalRemaining;
+
+        return $this;
+    }
+
     /**
      * Validates the budget exceeded view.
      *
@@ -146,5 +182,32 @@ class BudgetExceededView extends BaseMail implements ViewInterface
         if (!isset($this->className)) {
             throw new \InvalidArgumentException('Class name cannot be empty');
         }
+
+        if (!isset($this->currency)) {
+            throw new \InvalidArgumentException('Currency cannot be empty');
+        }
+
+        if (!isset($this->totalRemaining)) {
+            throw new \InvalidArgumentException('Total remaining cannot be empty');
+        }
+
+        if (!isset($this->budgetAmount)) {
+            throw new \InvalidArgumentException('Budget amount cannot be empty');
+        }
+    }
+
+
+    /**
+     * Set the value of budgetAmount
+     *
+     * @param float $budgetAmount
+     *
+     * @return self
+     */
+    public function setBudgetAmount(float $budgetAmount): self
+    {
+        $this->budgetAmount = $budgetAmount;
+
+        return $this;
     }
 }
