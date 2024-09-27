@@ -13,6 +13,7 @@ class BaseMail extends Mail {
 
     public function __construct()
     {
+        $this->copyRightDate = (string) date('Y');
         parent::__construct(__DIR__.'/../../resources/views/');
     }
 
@@ -95,7 +96,7 @@ class BaseMail extends Mail {
             throw new \InvalidArgumentException('User email cannot be empty');
         }
 
-        if(empty($this->copyRightDate)) {
+        if(!isset($this->copyRightDate)) {
             $this->copyRightDate = (string) date('Y');
         }
     }
