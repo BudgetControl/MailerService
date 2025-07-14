@@ -1,11 +1,13 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
     <div class="row">
-
-        <p>Check out [{{workspace_name}}], a workspace that {{user_from}} has shared with you. You can find it in your workspace settings and on the sidebar.</p>
-      
+        <h2>Nuovo Workspace Condiviso</h2>
+        <p>{{user_from}} ha condiviso con te il workspace <strong>"{{workspace_name}}"</strong>.</p>
+        <p>Puoi accedervi dalla barra laterale o dalle impostazioni del tuo account.</p>
     </div>
 
+    <div class="row text-center">
+        <a href="/dashboard" class="button">Vai al Dashboard</a>
+    </div>
 {% endblock %}

@@ -1,22 +1,22 @@
 {% extends "base.twig" %}
 
     {% block content %}
+        <div class="row">
+            <h2>⚠️ Budget Superato</h2>
+            <p>Ciao {{user_name}},</p>
+            <p>Il tuo budget <strong>"{{budgetName}}"</strong> ha superato il limite impostato.</p>
+        </div>
+
+        <div class="budget-info">
+            <span><b>Budget impostato:</b> {{budgetAmount}} {{currency}}</span>
+            <span><b>Totale speso:</b> {{totalSpent}} {{currency}}</span>
+            <span><b>Rimanente:</b> {{totalRemaining}} {{currency}}</span>
+            <span><b>Percentuale utilizzata:</b> {{spentPercentage}}</span>
+        </div>
 
         <div class="row">
-            <p>Hi {{user_name}},</p>
-            <p>Your budget <b>"{{budgetName}}"</b> has exceeded the limit you set.</p>
+            <p>Ti consigliamo di rivedere le tue spese o di aggiornare il limite del budget se necessario.</p>
         </div>
-        <div class="row mt-5">
-            <div>
-                <div style="align-items: center;">
-                    <span><b> Budget configurato:</b> {{budgetAmount}} {{currency}}</span><br>
-                    <span class="total-spent"><b>Totale speso:</b> {{totalSpent}} {{currency}}</span><br>
-                    <span class="total-spent"><b>Totale rimanente:</b> {{totalRemaining}} {{currency}}</span><br>
-                    <span class="spent-percentage"><b>Percentuale spesa:</b> {{spentPercentage}}</span><br>
-                </div>
-            </div>
-        </div>
-
     {% endblock %}
 
     {% block styles %}

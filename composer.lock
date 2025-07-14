@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27fff6caa530a907dc4f0e77f9180e42",
+    "content-hash": "b1e6c209b6315d388ca75fdaa3dcbf67",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -214,16 +214,16 @@
         },
         {
             "name": "mlabfactory/libs-mailer",
-            "version": "v1.1.5",
+            "version": "v1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlabfactory/Libs_Mailer.git",
-                "reference": "74dcfd8eecd0d43f294add36f6349f93a876f55a"
+                "reference": "e14ca8faa74dba17727ca5c17e898924eafa93b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/74dcfd8eecd0d43f294add36f6349f93a876f55a",
-                "reference": "74dcfd8eecd0d43f294add36f6349f93a876f55a",
+                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/e14ca8faa74dba17727ca5c17e898924eafa93b5",
+                "reference": "e14ca8faa74dba17727ca5c17e898924eafa93b5",
                 "shasum": ""
             },
             "require": {
@@ -248,10 +248,10 @@
             ],
             "description": "Budget control SDK package mailer",
             "support": {
-                "source": "https://github.com/mlabfactory/Libs_Mailer/tree/v1.1.5",
+                "source": "https://github.com/mlabfactory/Libs_Mailer/tree/v1.3",
                 "issues": "https://github.com/mlabfactory/Libs_Mailer/issues"
             },
-            "time": "2024-09-06T10:10:19+00:00"
+            "time": "2025-07-14T12:29:47+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4043,6 +4043,6 @@
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

@@ -4,22 +4,17 @@ declare(strict_types=1);
 
 namespace BudgetcontrolLibs\Mailer\Service;
 
-use MLAB\SdkMailer\Service\Mail;
 use BudgetcontrolLibs\Mailer\Exceptions\ErrorSendingMail;
 use BudgetcontrolLibs\Mailer\View\ViewInterface;
+use MLAB\SdkMailer\Smtp\SmtpInterfaceModel;
 
 final class ClientMail
 {
-    private Mail $mail;
+    private \MLAB\SdkMailer\Service\EmailService $mail;
 
-    public function __construct(string $host, string $driver, string $password, string $user, string $emailFromAddress)
+    public function __construct(SmtpInterfaceModel $smtpConfig, string $fromEmail)
     {
-        $this->mail = new Mail();
-        $this->mail->setHost($host);
-        $this->mail->setDriver($driver);
-        $this->mail->setPassword($password);
-        $this->mail->setUser($user);
-        $this->mail->setEmailFromAddress($emailFromAddress);
+        $this->mail = new \MLAB\SdkMailer\Service\EmailService($smtpConfig, $fromEmail);
     }
 
     /**
@@ -35,7 +30,7 @@ final class ClientMail
     {
         try {
 
-            $this->mail->sendMail($emailTo, $subject, $view);
+            $this->mail->sendEmail($emailTo, $subject, $view);
 
         } catch (\Throwable $e) {
 

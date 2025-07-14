@@ -6,11 +6,14 @@
             <img src="https://d1lppblt9t2x15.cloudfront.net/logos/bf0d271a7f2045bda323b1d1a2e730e2.png" alt="BudgetControl">
         </div>
 
-        {% block content %}
-        {% endblock %}
+        <div class="row">
+            {% block message %}
+                <p>{{message_body}}</p>
+            {% endblock %}
+        </div>
 
         <div class="signature">
-            <p>Grazie per aver scelto BudgetControl!</p>
+            <p>Cordiali saluti,</p>
             <p><strong>Il team BudgetControl</strong></p>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace BudgetcontrolLibs\Mailer\View;
@@ -24,25 +25,24 @@ class BudgetExceededView extends BaseMail implements ViewInterface
      *
      * @return string The rendered view as a string.
      */
-    public function view() :string
+    public function view(): string
     {
         $this->setTemplate('command-jobs/budget_exceeded.twig');
         $this->setCopyRightDate((string) date('Y'));
         $this->validate();
-
-        return $this->render(
-            $this->renderData([
-                'message' => $this->message,
-                'totalSpent' => $this->totalSpent,
-                'budgetName' => $this->budgetName,
-                'spentPercentage' => $this->spentPercentage,
-                'percentage' => $this->percentage > 100 ? 100 : $this->percentage,
-                'className' => $this->className,
-                'currency' => $this->currency,
-                'totalRemaining' => $this->totalRemaining,
-                'budgetAmount' => $this->budgetAmount
-            ])
-        );
+        $this->renderData([
+            'message' => $this->message,
+            'totalSpent' => $this->totalSpent,
+            'budgetName' => $this->budgetName,
+            'spentPercentage' => $this->spentPercentage,
+            'percentage' => $this->percentage > 100 ? 100 : $this->percentage,
+            'className' => $this->className,
+            'currency' => $this->currency,
+            'totalRemaining' => $this->totalRemaining,
+            'budgetAmount' => $this->budgetAmount
+        ]);
+        
+        return $this->render();
     }
 
     /**
@@ -52,7 +52,7 @@ class BudgetExceededView extends BaseMail implements ViewInterface
      * @return self
      */
     public function setMessage(string $budgetName): self
-    {   
+    {
         $this->budgetName = $budgetName;
         $this->message = "Your budget $budgetName, has been exceeded. Please review your expenses and make necessary adjustments.";
 
