@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5adab64f60e2b524fda529516a2d7b4",
+    "content-hash": "7ba3bbb8c37b68250348d51ab4cdcb8a",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -214,16 +214,16 @@
         },
         {
             "name": "mlabfactory/libs-mailer",
-            "version": "dev-main",
+            "version": "v1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlabfactory/Libs_Mailer.git",
-                "reference": "213831567f7c8fcbfe691febd9ff65c3b1f4fc31"
+                "reference": "837d54ccb6d4b38b0ca9664e28120c0324240669"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/213831567f7c8fcbfe691febd9ff65c3b1f4fc31",
-                "reference": "213831567f7c8fcbfe691febd9ff65c3b1f4fc31",
+                "url": "https://api.github.com/repos/mlabfactory/Libs_Mailer/zipball/837d54ccb6d4b38b0ca9664e28120c0324240669",
+                "reference": "837d54ccb6d4b38b0ca9664e28120c0324240669",
                 "shasum": ""
             },
             "require": {
@@ -234,7 +234,6 @@
                 "twig/twig": "^3.8",
                 "vlucas/phpdotenv": "^5.6"
             },
-            "default-branch": true,
             "type": "sdk",
             "autoload": {
                 "psr-4": {
@@ -249,10 +248,10 @@
             ],
             "description": "Budget control SDK package mailer",
             "support": {
-                "source": "https://github.com/mlabfactory/Libs_Mailer/tree/main",
+                "source": "https://github.com/mlabfactory/Libs_Mailer/tree/v1.3",
                 "issues": "https://github.com/mlabfactory/Libs_Mailer/issues"
             },
-            "time": "2025-07-14T15:07:49+00:00"
+            "time": "2025-07-15T09:06:20+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4036,9 +4035,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "mlabfactory/libs-mailer": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

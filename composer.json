@@ -15,7 +15,7 @@
     },
     "require": {
         "php": "^8.1",
-        "mlabfactory/libs-mailer": "dev-main",
+        "mlabfactory/libs-mailer": "~v1.3",
         "twig/twig": "^3.12"
     },
     "require-dev": {
