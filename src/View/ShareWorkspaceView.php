@@ -21,13 +21,16 @@ class ShareWorkspaceView extends BaseMail implements ViewInterface
     {
         $this->setTemplate('workspace/share.twig');
         $this->validate();
-
-        return $this->render(
-            $this->renderData([
-                'workspace_name' => $this->workspaceName,
-                'user_from' => $this->userFrom,
-            ])
+        $this->setData(
+            $this->renderData(
+                [
+                    'workspace_name' => $this->workspaceName,
+                    'user_from' => $this->userFrom,
+                ]
+            )
         );
+
+        return $this->render();
         
     }
 

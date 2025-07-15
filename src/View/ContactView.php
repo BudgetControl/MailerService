@@ -28,11 +28,12 @@ class ContactView extends BaseMail implements ViewInterface
         $this->setTemplate($this->getTemplate());
         $this->setCopyRightDate((string) date('Y'));
         $this->validate();
-        $this->renderData(
+        $data = $this->renderData(
             [
                 'message_body' => $this->messageBody,
             ]
-            );
+        );
+        $this->setData($data);
 
         return $this->render();
 

@@ -20,14 +20,13 @@ class SignUpView extends BaseMail implements ViewInterface {
         $this->setTemplate('authentication/signup.twig');
         $this->setCopyRightDate((string) date('Y'));
         $this->validate();
-
-        return $this->render(
-            $this->renderData(
-                [
-                    'confirm_link' => $this->confirmLink
-                ]
-            )
+        $this->setData(
+            $this->renderData([
+                'confirm_link' => $this->confirmLink
+            ])
         );
+
+        return $this->render();
     }
 
     /**

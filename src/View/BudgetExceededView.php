@@ -30,7 +30,7 @@ class BudgetExceededView extends BaseMail implements ViewInterface
         $this->setTemplate('command-jobs/budget_exceeded.twig');
         $this->setCopyRightDate((string) date('Y'));
         $this->validate();
-        $this->renderData([
+        $data = $this->renderData([
             'message' => $this->message,
             'totalSpent' => $this->totalSpent,
             'budgetName' => $this->budgetName,
@@ -41,6 +41,7 @@ class BudgetExceededView extends BaseMail implements ViewInterface
             'totalRemaining' => $this->totalRemaining,
             'budgetAmount' => $this->budgetAmount
         ]);
+        $this->setData($data);
         
         return $this->render();
     }

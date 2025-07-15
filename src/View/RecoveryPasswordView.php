@@ -20,14 +20,12 @@ class RecoveryPasswordView extends BaseMail implements ViewInterface {
         $this->setTemplate('authentication/recovery_password.twig');
         $this->setCopyRightDate((string) date('Y'));
         $this->validate();
+        $data = $this->renderData([
+            'link' => $this->link,
+        ]);
+        $this->setData($data);
 
-        return $this->render(
-            $this->renderData(
-                [
-                    'link' => $this->link
-                ]
-            )
-        );
+        return $this->render();
     }
 
     /**
