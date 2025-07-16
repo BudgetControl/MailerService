@@ -8,7 +8,7 @@
 
         <div class="row">
             {% block message %}
-                <p>{{message_body}}</p>
+                {{ message_body|raw }}
             {% endblock %}
         </div>
 
