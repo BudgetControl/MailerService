@@ -7,11 +7,10 @@ namespace BudgetcontrolLibs\Mailer\View;
  * Class ShareWorkspaceVIew
  * Represents a view for a budget exceeded email.
  */
-class ShareWorkspaceView extends BaseMail implements ViewInterface
+class UnShareWorkspaceView extends BaseMail implements ViewInterface
 {
     private string $workspaceName;
     private string $userFrom;
-    private string $dashboardUrl;
 
     /**
      * Renders the view for the budget exceeded notification.
@@ -20,14 +19,13 @@ class ShareWorkspaceView extends BaseMail implements ViewInterface
      */
     public function view(): string
     {
-        $this->setTemplate('workspace/share.twig');
+        $this->setTemplate('workspace/un-share.twig');
         $this->validate();
         $this->setData(
             $this->renderData(
                 [
                     'workspace_name' => $this->workspaceName,
                     'user_from' => $this->userFrom,
-                    'dashboard_url' => $this->dashboardUrl,
                 ]
             )
         );
@@ -64,20 +62,6 @@ class ShareWorkspaceView extends BaseMail implements ViewInterface
         return $this;
     }
 
-    /**
-     * Set the value of dashboardUrl
-     *
-     * @param string $dashboardUrl
-     *
-     * @return self
-     */
-    public function setDashboardUrl(string $dashboardUrl): self
-    {
-        $this->dashboardUrl = $dashboardUrl;
-
-        return $this;
-    }
-
 
     public function validate(): void
     {
@@ -87,10 +71,6 @@ class ShareWorkspaceView extends BaseMail implements ViewInterface
 
         if (empty($this->userFrom)) {
             throw new \InvalidArgumentException('User from is required');
-        }
-
-        if (empty($this->dashboardUrl)) {
-            throw new \InvalidArgumentException('Dashboard URL is required');
         }
     }
 
